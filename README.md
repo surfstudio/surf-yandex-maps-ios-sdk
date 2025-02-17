@@ -99,6 +99,16 @@ targets: [
 
 </details>
 
+## How to update version
+
+- Find new realease of YandexMapsMobile [here](https://github.com/CocoaPods/Specs/tree/master/Specs/d/d/0/YandexMapsMobile)
+- Unzip downloaded archive into `Input` folder (it's under gitignore)
+- Run `sh unpack_and_pack.sh` (checksum will be printed and zip will be placed in Output folder)
+- Update versions and checksum in Readme and `Package.swift`
+- Push and create new tag
+- Create new Release at github page
+- Add `xcframework.zip` from `Output` folder to release
+
 ## Special thanks
 
 Based on work in this [repo](https://github.com/c-villain/YandexMapsMobile) ❤️
