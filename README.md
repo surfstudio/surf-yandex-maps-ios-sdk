@@ -87,12 +87,23 @@ targets: [
         dependencies: [
             .product(name: "YandexMapsMobile", package: "surf-yandex-maps-ios-sdk")
         ],
-        linkerSettings: [ // <===== ‼️LOOK HERE‼️
+        linkerSettings: [ // <===== ‼️LOOK HERE‼️ 
+            // same as described in https://github.com/CocoaPods/Specs/blob/master/Specs/d/d/0/YandexMapsMobile/4.10.1-lite/YandexMapsMobile.podspec.json
+            .linkedFramework("CoreFoundation"),
+            .linkedFramework("Foundation"),
             .linkedFramework("CoreLocation"),
-            .linkedFramework("CoreTelephony"),
+            .linkedFramework("UIKit"),
+            .linkedFramework("OpenGLES"),
             .linkedFramework("SystemConfiguration"),
+            .linkedFramework("CoreGraphics"),
+            .linkedFramework("QuartzCore"),
+            .linkedFramework("Security"),
+            .linkedFramework("CoreTelephony"),
+            .linkedFramework("CoreMotion"),
+            .linkedFramework("DeviceCheck"),
+            .linkedLibrary("resolv"),
             .linkedLibrary("c++"),
-            .unsafeFlags(["-ObjC"]),
+            .unsafeFlags(["-ObjC"])
         ]),
 ]
 ```
