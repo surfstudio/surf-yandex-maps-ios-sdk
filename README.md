@@ -87,17 +87,38 @@ targets: [
         dependencies: [
             .product(name: "YandexMapsMobile", package: "surf-yandex-maps-ios-sdk")
         ],
-        linkerSettings: [ // <===== ‼️LOOK HERE‼️
+        linkerSettings: [ // <===== ‼️LOOK HERE‼️ 
+            // same as described in https://github.com/CocoaPods/Specs/blob/master/Specs/d/d/0/YandexMapsMobile/4.10.1-lite/YandexMapsMobile.podspec.json
+            .linkedFramework("CoreFoundation"),
+            .linkedFramework("Foundation"),
             .linkedFramework("CoreLocation"),
-            .linkedFramework("CoreTelephony"),
+            .linkedFramework("UIKit"),
+            .linkedFramework("OpenGLES"),
             .linkedFramework("SystemConfiguration"),
+            .linkedFramework("CoreGraphics"),
+            .linkedFramework("QuartzCore"),
+            .linkedFramework("Security"),
+            .linkedFramework("CoreTelephony"),
+            .linkedFramework("CoreMotion"),
+            .linkedFramework("DeviceCheck"),
+            .linkedLibrary("resolv"),
             .linkedLibrary("c++"),
-            .unsafeFlags(["-ObjC"]),
+            .unsafeFlags(["-ObjC"])
         ]),
 ]
 ```
 
 </details>
+
+## How to update version
+
+- Find new realease of YandexMapsMobile [here](https://github.com/CocoaPods/Specs/tree/master/Specs/d/d/0/YandexMapsMobile)
+- Unzip downloaded archive into `Input` folder (it's under gitignore)
+- Run `sh unpack_and_pack.sh` (checksum will be printed and zip will be placed in Output folder)
+- Update versions and checksum in Readme and `Package.swift`
+- Push and create new tag
+- Create new Release at github page
+- Add `xcframework.zip` from `Output` folder to release
 
 ## Special thanks
 
