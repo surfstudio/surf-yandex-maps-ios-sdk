@@ -114,6 +114,7 @@ targets: [
 
 - Find new realease of YandexMapsMobile [here](https://github.com/CocoaPods/Specs/tree/master/Specs/d/d/0/YandexMapsMobile)
 - Unzip downloaded archive into `Input` folder (it's under gitignore)
+- Rename `YandexMapsMobileLite.xcframework` to `YandexMapsMobile.xcframework` if needed
 - Run `sh unpack_and_pack.sh` (checksum will be printed and zip will be placed in Output folder)
 - Update versions and checksum in Readme and `Package.swift`
 - Push and create new tag
