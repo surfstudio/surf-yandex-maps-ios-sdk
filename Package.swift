@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "YandexMapsMobile",
     platforms: [
-        .iOS(.v12),
+        .iOS(.v13),
     ],
     products: [
         .library(
@@ -18,8 +18,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "YandexMapsMobile",
-            url: "https://github.com/surfstudio/surf-yandex-maps-ios-sdk/releases/download/4.11.0/YandexMapsMobile.xcframework.zip",
-            checksum: "241d412022b1a4d9dd98fd668b81cf990fd345180cbfaa802beaf0761bd30f98"
+            url: "https://github.com/surfstudio/surf-yandex-maps-ios-sdk/releases/download/4.13.0/YandexMapsMobile.xcframework.zip",
+            checksum: "3314b339d44736db3396fed49b3bdbef96d367af99f0d193ac1d4963feda30e7"
         )
     ]
 )
